@@ -1,0 +1,27 @@
+<h1>  Vista new </h1>
+
+<!-- más para buscadores -->
+  <%= form_tag "/users", method: "post" do%>
+    <%= text_field :user, :name %>
+    <%= submit_tag "Crear Usuario"%>
+  <%end%> -->
+
+<p>necesita una variable de instancia para generar el formulario desde el controlador-->
+f es el parametro de user
+puedo quitar el segundo hash</p>
+
+<%= form_for @user, url: "/users", method: "post" do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+<%end%>
+
+<% if @user.errors%>
+  <% @user.errors.full_messages.each do |error|%>
+    <h2> <%= error %> </h2>
+  <% end %>
+<% end %>
+
+<%= form_for @user do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+<%end%>
