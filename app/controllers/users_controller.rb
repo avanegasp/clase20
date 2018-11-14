@@ -5,17 +5,23 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    puts "============="
+    puts @user = User.new
+    puts "============="
+
   end
 
   def create
-    @user = User.new(user_params)
+    puts "---------------------"
+    puts @user = User.new(user_params)
+    puts "---------------------"
+
     if @user.save
       redirect_to '/users'
     else
       render 'users/new'
     end
-    User.create(user_params) (cuando antes se hacía con create)
+    # User.create(user_params) (cuando antes se hacía con create)
   end
 
 

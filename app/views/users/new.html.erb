@@ -4,11 +4,13 @@
   <%= form_tag "/users", method: "post" do%>
     <%= text_field :user, :name %>
     <%= submit_tag "Crear Usuario"%>
-  <%end%> -->
+  <%end%>
 
-<p>necesita una variable de instancia para generar el formulario desde el controlador-->
+<p>
+necesita una variable de instancia para generar el formulario desde el controlador-->
 f es el parametro de user
-puedo quitar el segundo hash</p>
+puedo quitar el segundo hash
+</p>
 
 <%= form_for @user, url: "/users", method: "post" do |f| %>
     <%= f.text_field :name %>
